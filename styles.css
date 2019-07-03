@@ -11,17 +11,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   max-width: 50%;
-  /* display: flex;  
-  flex-direction: column;
-  align-items: center;
-  justify-items: center; */
 }
 
 .header {
-  height: 40%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-end;
+  font-weight: 600;
+  height: 250px;
 }
 
 .wrapper {
@@ -29,6 +26,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-items: center;
+  margin-top: 5%;
+
 }
 
 .first-row,
@@ -40,14 +39,15 @@ body {
 
 .first-row > div,
 .second-row > div {
-  background: #f3b358;
+  /* background: #f3b358; */
   width: 140px;
   height: 100px;
   /* display: flex; */
   /* flex-direction: row; */
 }
 
-.ball-bounce {
+.ball-bounce, 
+.newton-loader {
   position:relative;
 }
 
@@ -106,3 +106,91 @@ body {
     transform:scale(1, 1);
   }
 }
+
+.newton-loader div {
+  position: absolute;
+  width: 10%;
+  height: 12%;
+  border-radius: 50%;
+  bottom: 20px;
+  background-color: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.newton-loader .first {
+  left: 20px;
+  animation: move_right .625s infinite;
+}
+.newton-loader .second {
+  left: 50px;
+  animation: move_right .625s infinite;
+}
+.newton-loader .third {
+  left: 80px;
+  animation: disappear .625s infinite;
+}
+.newton-loader .fourth {
+  left: 20px;
+  animation: appear .625s infinite;
+}
+@keyframes move_right {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(60px);
+  }
+}
+@keyframes appear {
+  0% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+@keyframes disappear {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(0);
+  }
+}
+
+
+.spinner .points {
+  width: 70%;
+  height: 70%;
+  margin: 10% auto;
+  animation: rounding 2s infinite linear;
+ }
+ 
+ .spinner .points .point-first,
+ .spinner .points .point-second {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  background: #fefefe;
+  animation: spin 2s infinite;
+ }
+ 
+ .spinner .points .point-second {
+  animation-delay: -1s;
+ }
+ 
+ @keyframes rounding {
+  100% {
+   transform: rotate(360deg);
+  }
+ }
+ 
+ @keyframes spin {
+  0%,
+  100% {
+   transform: scale(0.0);
+  }
+  50% {
+   transform: scale(1.0);
+  }
+ }
+
