@@ -17,16 +17,97 @@ body {
     height: 200px;
     display: inline-block;
 }
-.wrapper h1 {
+.wrapper h1{
     height: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.wrapper .ball-bounce {}
-.wrapper .circle-loader {}
-.wrapper .pulsing {}
-.wrapper .equalizer {}
-.wrapper .newton-loader {}
-.wrapper .spinner {}
+
+.wrapper .ball-bounce #ball_container{
+    display: inline-block;
+	position:relative;
+	width:43px;
+	height:43px;
+	margin:auto;
+}
+
+.wrapper .ball-bounce .text span{
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+  position: relative;
+  top: 54px;
+  left: 30px;
+}
+
+.wrapper .ball-bounce .ball{
+	background-color: white;
+	position:absolute;
+	top:0;
+	left:0;
+	width:16px;
+	height:16px;
+	border-radius:8px;
+	animation-name:animation_1;
+	animation-duration:1s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-delay:0s;
+	transform:scale(0.5, 1);
+}
+
+@keyframes animation_1{
+	0%{
+		top:0px;
+		transform:scale(1, 1);
+	}
+
+  15%{
+		top:5px;
+		transform:scale(1, 1);
+	}
+
+  30%{
+		top:32px;
+		transform:scale(1, 1);
+	}
+
+	50%{
+		top:64px;
+		transform:scale(1.9, 0.5);
+	}
+
+	70%{
+		top:32px;
+		transform:scale(1, 1);
+	}
+
+  85%{
+		top:5px;
+		transform:scale(1, 1);
+	}
+
+	100%{
+		top:0px;
+		transform:scale(1, 1);
+	}
+}
+
+.wrapper .circle-loader {
+    height: 200px;
+}
+.wrapper .pulsing {
+    height: 200px;
+}
+.wrapper .equalizer {
+    height: 200px;
+}
+.wrapper .newton-loader {
+    height: 200px;
+}
+.wrapper .spinner {
+    height: 200px;
+}
 
