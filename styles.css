@@ -32,15 +32,15 @@ body {
 .wrapper .spinner {}
 
 
-.points {
+.spinner .points {
     width: 70%;
     height: 70%;
     margin: 10% auto;
     animation: rounding 2s infinite linear;
    }
    
-   .point-first,
-   .point-second {
+   .spinner .points .point-first,
+   .spinner .points .point-second {
     width: 50%;
     height: 50%;
     border-radius: 100%;
@@ -48,7 +48,7 @@ body {
     animation: spin 2s infinite;
    }
    
-   .point-second {
+   .spinner .points .point-second {
     animation-delay: -1s;
    }
    
