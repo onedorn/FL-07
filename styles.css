@@ -157,3 +157,39 @@ body {
   }
 }
 
+.spinner .points {
+  width: 70%;
+  height: 70%;
+  margin: 10% auto;
+  animation: rounding 2s infinite linear;
+ }
+ 
+ .spinner .points .point-first,
+ .spinner .points .point-second {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  background: #fefefe;
+  animation: spin 2s infinite;
+ }
+ 
+ .spinner .points .point-second {
+  animation-delay: -1s;
+ }
+ 
+ @keyframes rounding {
+  100% {
+   transform: rotate(360deg);
+  }
+ }
+ 
+ @keyframes spin {
+  0%,
+  100% {
+   transform: scale(0.0);
+  }
+  50% {
+   transform: scale(1.0);
+  }
+ }
+
