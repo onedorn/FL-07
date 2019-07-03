@@ -1,0 +1,67 @@
+.loader {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    position: relative;
+}
+
+.loader div {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    bottom: 40px;
+    background-color: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader .first {
+    left: 20px;
+    animation: move_right .625s infinite;
+}
+
+.loader .second {
+    left: 80px;
+    animation: move_right .625s infinite;
+}
+
+.loader .third {
+    left: 140px;
+    animation: disappear .625s infinite;
+}
+
+.loader .fourth {
+    left: 20px;
+    animation: appear .625s infinite;
+}
+
+@keyframes move_right {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(60px);
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes disappear {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
