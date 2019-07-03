@@ -10,11 +10,15 @@ body {
   color: #fff;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  max-width: 70%;
+  max-width: 50%;
+  /* display: flex;  
+  flex-direction: column;
+  align-items: center;
+  justify-items: center; */
 }
 
 .header {
-  height: 25%;
+  height: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-items: center;
 }
 
 .first-row,
@@ -36,8 +41,10 @@ body {
 .first-row > div,
 .second-row > div {
   background: #f3b358;
-  width: 120px;
-  height: 80px;
+  width: 140px;
+  height: 100px;
+  /* display: flex; */
+  /* flex-direction: row; */
 }
 
 .ball-bounce {
@@ -45,11 +52,11 @@ body {
 }
 
 .ball-bounce .text span{
-  color: white;
-  font-weight: bold;
+  color: #FCF9ED;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
-  display: inline-block;
-  position: relative;
+  font-weight: 500;
+  position: absolute;
   top: 54px;
   left: 30px;
   }
@@ -59,8 +66,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 8%;
-  height: 8%;
+  width: 10%;
+  height: 10%;
   border-radius: 50%;
   animation-name: bounce;
   animation-duration: 1s;
@@ -74,32 +81,26 @@ body {
     top:0px;
     transform:scale(1, 1);
   }
-
   15%{
     top:5px;
     transform:scale(1, 1);
   }
-
   30%{
     top:32px;
     transform:scale(1, 1);
   }
-
   50%{
     top:64px;
     transform:scale(1.9, 0.5);
   }
-
   70%{
     top:32px;
     transform:scale(1, 1);
   }
-
   85%{
     top:5px;
     transform:scale(1, 1);
   }
-
   100%{
     top:0px;
     transform:scale(1, 1);
