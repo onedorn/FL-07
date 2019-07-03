@@ -14,11 +14,11 @@ body {
 }
 
 .header {
-  height: 35%;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
   font-weight: 600;
+  height: 250px;
 }
 
 .wrapper {
@@ -46,7 +46,8 @@ body {
   /* flex-direction: row; */
 }
 
-.ball-bounce {
+.ball-bounce, 
+.newton-loader {
   position:relative;
 }
 
@@ -106,18 +107,12 @@ body {
   }
 }
 
-.newton-loader {
-  width: 200px;
-  height: 200px;
-  display: inline-block;
-  position: relative;
-}
 .newton-loader div {
   position: absolute;
-  width: 35px;
-  height: 35px;
+  width: 10%;
+  height: 12%;
   border-radius: 50%;
-  bottom: 40px;
+  bottom: 20px;
   background-color: #fff;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
@@ -126,11 +121,11 @@ body {
   animation: move_right .625s infinite;
 }
 .newton-loader .second {
-  left: 80px;
+  left: 50px;
   animation: move_right .625s infinite;
 }
 .newton-loader .third {
-  left: 140px;
+  left: 80px;
   animation: disappear .625s infinite;
 }
 .newton-loader .fourth {
