@@ -11,6 +11,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
+
 .wrapper > div {
     background: #f3b358;
     width: 200px;
@@ -29,4 +30,41 @@ body {
 .wrapper .equalizer {}
 .wrapper .newton-loader {}
 .wrapper .spinner {}
+
+
+.points {
+    width: 70%;
+    height: 70%;
+    margin: 10% auto;
+    animation: rounding 2s infinite linear;
+   }
+   
+   .point-first,
+   .point-second {
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    background: #fefefe;
+    animation: spin 2s infinite;
+   }
+   
+   .point-second {
+    animation-delay: -1s;
+   }
+   
+   @keyframes rounding {
+    100% {
+     transform: rotate(360deg);
+    }
+   }
+   
+   @keyframes spin {
+    0%,
+    100% {
+     transform: scale(0.0);
+    }
+    50% {
+     transform: scale(1.0);
+    }
+   }
 
