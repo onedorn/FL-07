@@ -1,32 +1,111 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body {
-    margin: 0 auto;
-    max-width: 50%;
-    background: #FE9907;
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-}
-.wrapper > div {
-    background: #f3b358;
-    width: 200px;
-    height: 200px;
-    display: inline-block;
-}
-.wrapper h1 {
-    height: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.wrapper .ball-bounce {}
-.wrapper .circle-loader {}
-.wrapper .pulsing {}
-.wrapper .equalizer {}
-.wrapper .newton-loader {}
-.wrapper .spinner {}
 
+body {
+  margin: 0 auto;
+  background: #FE9907;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+body h1 {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.first-row,
+.second-row  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.first-row > div,
+.second-row > div {
+  background: #f3b358;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}
+
+.ball-bounce {
+  position:relative;
+}
+
+.ball-bounce .text span{
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+  position: relative;
+  top: 54px;
+  left: 30px;
+  }
+
+.ball-bounce .ball{
+  background-color: #FCF9ED;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: scale(0.5, 1);
+  }
+
+@keyframes bounce {
+  0%{
+    top:0px;
+    transform:scale(1, 1);
+  }
+
+  15%{
+    top:5px;
+    transform:scale(1, 1);
+  }
+
+  30%{
+    top:32px;
+    transform:scale(1, 1);
+  }
+
+  50%{
+    top:64px;
+    transform:scale(1.9, 0.5);
+  }
+
+  70%{
+    top:32px;
+    transform:scale(1, 1);
+  }
+
+  85%{
+    top:5px;
+    transform:scale(1, 1);
+  }
+
+  100%{
+    top:0px;
+    transform:scale(1, 1);
+  }
+}
