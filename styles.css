@@ -51,7 +51,8 @@ body {
 
 .ball-bounce, 
 .newton-loader,
-.equalizer {
+.equalizer,
+.pulsing {
   position:relative;
 }
 
@@ -109,6 +110,70 @@ body {
   100%{
     top: 0px;
     transform: scale(1, 1);
+  }
+}
+
+/* Pulsing loader */
+.pulsing {
+  transform: translate(-50% -50%);
+}
+.big,
+.little {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+}
+.big {
+  border-radius: 50%;
+  position: relative;
+  background-image: radial-gradient(#FDD69B 80%, #FEFEFC 99%);
+  animation: 1s pulse-big infinite;
+}
+.little {
+  background-image: radial-gradient(#FEFEFC 30%, #FDD69B);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: 1s pulse-little infinite;
+}
+
+@keyframes pulse-big {
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  } 
+  75% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1.5);
+  } 
+}
+
+@keyframes pulse-little {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+     transform: scale(0.3) rotate(90deg);
+  }
+  25% {
+    border-radius: 50%;
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.3) rotate(90deg);
+  }
+  75% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
   }
 }
 
@@ -200,6 +265,17 @@ body {
    transform: rotate(360deg);
   }
  }
+ @keyframes spin2 {
+  0%,
+  100% {
+  width: 0%;
+  height: 0%;
+  }
+  50% {
+  width: 50%;
+  height: 50%;
+  }
+}
 
 /* Equalizer loader */
 .equalizer {
