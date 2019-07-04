@@ -45,10 +45,6 @@ body {
   height: 100px;
 }
 
-.second-row {
-  margin-bottom: 50px;
-}
-
 .ball-bounce, 
 .newton-loader,
 .equalizer,
@@ -115,68 +111,39 @@ body {
 
 /* Pulsing loader */
 .pulsing {
-  transform: translate(-50% -50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
 }
-.big,
-.little {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-}
-.big {
-  border-radius: 50%;
+
+.pulsing-dots > * {
   position: relative;
-  background-image: radial-gradient(#FDD69B 80%, #FEFEFC 99%);
-  animation: 1s pulse-big infinite;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: pulsing 2s ease-in infinite;
 }
-.little {
-  background-image: radial-gradient(#FEFEFC 30%, #FDD69B);
+
+.dot-1 {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  animation: 1s pulse-little infinite;
+  animation-delay: 1s;
 }
 
-@keyframes pulse-big {
-  25% {
-    transform: scale(1);
+@keyframes pulsing {
+  0%, 100% { 
+    transform: scale(0); 
   }
-  50% {
-    transform: scale(1.5);
-  } 
-  75% {
-    transform: scale(2);
-  }
-  100% {
-    transform: scale(1.5);
-  } 
-}
-
-@keyframes pulse-little {
-  0% {
-    transform: scale(0);
-  }
-  10% {
-     transform: scale(0.3) rotate(90deg);
-  }
-  25% {
-    border-radius: 50%;
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(0.3) rotate(90deg);
-  }
-  75% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(0);
+  
+  50% { 
+    transform: scale(1); 
+    opacity: 0.5;
   }
 }
-
 
 
 /* Newton loader */
